@@ -22,9 +22,8 @@
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
-    "@tsconfig/node24": "^24.0.4",
-    "@types/bun": "latest",
-    "@types/node": "^24.10.9",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "^20.14.10",
     "@vitejs/plugin-vue": "^6.0.3",
     "@vue/tsconfig": "^0.8.1",
     "npm-run-all2": "^8.0.4",
