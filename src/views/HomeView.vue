@@ -6,7 +6,10 @@ import Hero from "@/components/Hero.vue";
 
 <template>
   <main class="px-5.25 flex flex-col items-center lg:px-40">
-    <Hero />
+    <Hero
+      title="Latest Blog Posts"
+      description="Insights, stories, and updates "
+    />
     <section class="mb-4">
       <Card
         category="Technology"

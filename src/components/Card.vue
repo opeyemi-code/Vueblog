@@ -54,7 +54,7 @@ defineProps({
           class="text-[#3B82F6] text-sm lg:text-[1rem] hover:cursor-pointer"
         >
           Read more
-          <FontAwesomeIcon :icon="['fas', 'arrow-right']" />
+          <FontAwesomeIcon :icon="['fas', 'arrow-right']" aria-hidden="true" />
         </RouterLink>
       </footer>
     </header>

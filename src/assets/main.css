@@ -3,3 +3,18 @@
 @theme {
   --breakpoint-2xl: 90rem; /* 1440px */
 }
+
+html,
+body {
+  height: 100%;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
