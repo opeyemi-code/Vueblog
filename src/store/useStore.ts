@@ -1,33 +1,21 @@
 import { reactive } from "vue";
-
-type Post = {
-  id: string;
-  title: string;
-  content: string;
-  excerpt: string;
-  featuredImage?: string;
-  category?: string;
-  tags?: string;
-  publishedAt?: number;
-  author?: string;
-};
-
-type Store = {
-  posts: Post[];
-  error: string;
-  loading: boolean;
-  fetchPosts: () => Promise<void>;
-  calculateReadTime: (content: string) => number;
-  trimContent: (content: string) => string;
-  postsLimit: number;
-  loadMorePosts: () => void;
-};
+import type { Post, Store } from "@/types/models";
 
 export const store = reactive<Store>({
   posts: [],
   error: "",
-  loading: true,
+  loading: false,
   postsLimit: 10,
+  selectedPost: "",
+  isToggle: false,
+
+  toggleNav() {
+    const hamburger = document.querySelectorAll(".hamburger");
+    const main = document.querySelector("main");
+    hamburger.forEach((elem) => elem.classList.toggle("custom-line"));
+    main!.classList.toggle("main-padding-top");
+    store.isToggle = !store.isToggle;
+  },
 
   async fetchPosts() {
     try {
@@ -37,9 +25,12 @@ export const store = reactive<Store>({
       if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
       const data = await res.json();
       store.posts = data.data;
-      console.log(store.posts);
+      store.loading = true;
     } catch (err) {
       if (err instanceof Error) store.error = err.message;
+      store.loading = false;
+      console.log(store.error);
+      console.log(store.loading);
     }
   },
 
@@ -56,18 +47,8 @@ export const store = reactive<Store>({
     return readTime;
   },
 
-  //trim content for card display
-  trimContent(content) {
-    const wordsArr = content.trim().split(/\s+/);
-    const wordsLength = wordsArr.length;
-    let trimedContent = "";
-
-    if (wordsLength > 30) {
-      trimedContent = wordsArr.slice(0, 30).join(" ");
-      trimedContent += "...";
-    } else {
-      trimedContent = content;
-    }
-    return trimedContent;
+  //Read more on selected card
+  selectedCardPost(post) {
+    store.selectedPost = post;
   },
 });

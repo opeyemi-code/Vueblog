@@ -18,3 +18,42 @@ body {
 main {
   flex-grow: 1;
 }
+
+.main--padding-top {
+  padding-top: 50px;
+}
+
+.custom-line {
+  width: 24px;
+  height: 3px;
+  background: #000;
+  position: absolute;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+  transform-origin: center;
+}
+
+.custom-line:nth-child(1) {
+  top: 30px;
+}
+
+.custom-line:nth-child(2) {
+  top: 30px;
+}
+
+.custom-line:nth-child(3) {
+  top: 45px;
+}
+
+.custom-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.custom-line:nth-child(2) {
+  opacity: 0; /* better than display: none for animation */
+}
+
+.custom-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}

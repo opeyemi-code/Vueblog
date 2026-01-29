@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-defineProps({
-  category: String,
-  published: String,
-  readTime: String,
-  title: String,
-  content: String,
-  author: String,
-});
+import { store } from "@/store/useStore";
+defineProps<{
+  category: String;
+  published: String;
+  readTime: String;
+  title: String;
+  content: String;
+  author: String;
+  handleClick: () => void;
+}>();
 </script>
 <template>
   <article class="bg-white px-5 py-4 rounded-lg mb-4 xl:w-216 2xl:w-212">
@@ -32,31 +34,34 @@ defineProps({
           {{ readTime }}
         </li>
       </ul>
-      <h2 class="my-3 text-[#111827] text-[1.125rem] font-semibold lg:text-xl">
-        {{ title }}
-      </h2>
-      <p class="my-4 text-sm lg:text-[1rem] leading-5.5 lg:leading-6.5">
-        {{ content }}
-      </p>
-      <footer class="mt-4 flex justify-between items-center">
-        <div>
-          <div class="flex items-center gap-3">
-            <img
-              class="w-8 h-8 object-cover rounded-full"
-              src="../assets/images/avater.jpg"
-              :alt="author"
-            />
-            <p class="text-[0.75rem] leading-4 lg:text-sm">{{ author }}</p>
-          </div>
-        </div>
-        <RouterLink
-          to="/detail"
-          class="text-[#3B82F6] text-sm lg:text-[1rem] hover:cursor-pointer"
-        >
-          Read more
-          <FontAwesomeIcon :icon="['fas', 'arrow-right']" aria-hidden="true" />
-        </RouterLink>
-      </footer>
     </header>
+    <h2 class="my-3 text-[#111827] text-[1.125rem] font-semibold lg:text-xl">
+      {{ title }}
+    </h2>
+    <p
+      class="my-4 text-sm lg:text-[1rem] leading-5.5 line-clamp-3 lg:leading-6.5"
+    >
+      {{ content }}
+    </p>
+    <footer class="mt-4 flex justify-between items-center">
+      <div>
+        <div class="flex items-center gap-3">
+          <img
+            class="w-8 h-8 object-cover rounded-full"
+            src="../assets/images/avater.jpg"
+            :alt="author"
+          />
+          <p class="text-[0.75rem] leading-4 lg:text-sm">{{ author }}</p>
+        </div>
+      </div>
+      <RouterLink
+        @click="handleClick"
+        to="/detail"
+        class="text-[#3B82F6] text-sm lg:text-[1rem] hover:cursor-pointer"
+      >
+        Read more
+        <FontAwesomeIcon :icon="['fas', 'arrow-right']" aria-hidden="true" />
+      </RouterLink>
+    </footer>
   </article>
 </template>

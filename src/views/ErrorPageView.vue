@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ErrorMessage from "@/components/ErrorMessage.vue";
 import {
   faArrowRotateRight,
   faHouse,
@@ -10,18 +11,10 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 <template>
   <main class="px-10 text-center flex flex-col items-center justify-center">
     <div>
-      <FontAwesomeIcon
-        :icon="faTriangleExclamation"
-        class="text-[#EF4444] bg-[#FEF2F2] px-6 py-6 rounded-full text-xl my-5"
-        aria-hidden="true"
+      <ErrorMessage
+        message="We couldn't load the blog posts at the moment. Please check your
+      connection or try again."
       />
-      <h2 class="text-slate-900 text-2xl leading-8 font-bold my-3">
-        Oops! Something went wrong
-      </h2>
-      <p class="text-[1rem] leading-6.5 w-90 text-center">
-        We couldn't load the blog posts at the moment. Please check your
-        connection or try again.
-      </p>
       <div class="w-full my-5">
         <button
           type="button"
