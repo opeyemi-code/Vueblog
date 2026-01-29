@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { store } from "@/store/useStore";
 defineProps<{
-  category: String;
-  published: String;
-  readTime: String;
-  title: String;
-  content: String;
-  author: String;
-  handleClick: () => void;
+  category?: string;
+  published: string;
+  readTime: string;
+  title: string;
+  content: string;
+  author: string;
+  handleClick?: () => void;
 }>();
 </script>
 <template>

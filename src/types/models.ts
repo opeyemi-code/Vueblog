@@ -5,8 +5,8 @@ export type Post = {
   excerpt: string;
   featuredImage?: string;
   category?: string;
-  tags?: string[];
-  publishedAt?: number;
+  tags?: string | undefined;
+  publishedAt?: string;
   author?: string;
 };
 
@@ -18,7 +18,7 @@ export type Store = {
   calculateReadTime: (content: string) => number;
   postsLimit: number;
   loadMorePosts: () => void;
-  selectedPost: Post | string;
+  selectedPost: Post | null;
   selectedCardPost: (post: Post) => void;
   isToggle: boolean;
   toggleNav: () => void;

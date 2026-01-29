@@ -3,14 +3,14 @@ import { faCalendar, faClock, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 defineProps<{
   id: string;
-  category: string;
-  featuredImage: string;
-  published: number;
-  readTime: number;
+  category?: string;
+  featuredImage?: string;
+  published: string;
+  readTime: string;
   title: string;
   content: string;
   author: string;
-  tags: string[];
+  tags?: string;
 }>();
 </script>
 

@@ -6,7 +6,7 @@ export const store = reactive<Store>({
   error: "",
   loading: false,
   postsLimit: 10,
-  selectedPost: "",
+  selectedPost: null,
   isToggle: false,
 
   toggleNav() {
@@ -40,7 +40,7 @@ export const store = reactive<Store>({
   },
 
   // Calculate Read Time
-  calculateReadTime(content) {
+  calculateReadTime(content: string) {
     const wordPerMinute = 250;
     const wordsLength = content.trim().split(/\s+/).length;
     const readTime = Math.ceil(wordsLength / wordPerMinute);
@@ -48,7 +48,7 @@ export const store = reactive<Store>({
   },
 
   //Read more on selected card
-  selectedCardPost(post) {
+  selectedCardPost(post: Post) {
     store.selectedPost = post;
   },
 });

@@ -9,11 +9,12 @@ import dayjs from "dayjs";
   <main class="pt-6 pb-12 2xl:w-212 2xl:mx-auto">
     <BackButton />
     <Post
-      :id="store.selectedPost.id"
+      v-if="store.selectedPost"
+      :id="store.selectedPost!.id"
       :category="store.selectedPost.category"
       :featuredImage="store.selectedPost.featuredImage"
       :published="
-        dayjs(store.selectedPost.publishedAt).format('dddd, DD MMMM YYYY')
+        dayjs(store.selectedPost!.publishedAt).format('dddd, DD MMMM YYYY')
       "
       :readTime="
         store.calculateReadTime(store.selectedPost.content) > 1
