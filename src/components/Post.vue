@@ -59,7 +59,7 @@ defineProps<{
     <footer class="flex items-center gap-2 py-4">
       <img
         class="w-8 h-auto lg:w-16"
-        :src="featuredImage"
+        src="/src/assets/images/img.png"
         alt="Sarah Johnson"
       />
       <div class="flex flex-col gap-1">

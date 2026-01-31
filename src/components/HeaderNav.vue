@@ -20,18 +20,18 @@ import { RouterLink } from "vue-router";
         'absolute top-full left-0 w-full flex-col items-center gap-6 bg-white py-4 border-t border-gray-100 sm:static sm:flex sm:flex-row sm:gap-2 sm:border-0 sm:py-0',
       ]"
     >
-      <li>
+      <li class="hover:bg-[#eff6ff">
         <RouterLink
           @click="store.toggleNav()"
-          class="px-4 py-2 rounded-lg text-sm font-medium hover:cursor-pointer lg:text-[1rem]"
+          class="px-4 py-2 rounded-lg text-sm font-medium hover:cursor-pointer lg:text-[1rem] hover:text-[#2563eb]"
           to="/"
           >Home</RouterLink
         >
       </li>
-      <li>
+      <li class="hover:bg-[#eff6ff">
         <RouterLink
           @click="store.toggleNav()"
-          class="px-4 py-2 rounded-lg text-sm font-medium hover:cursor-pointer text-[1rem]"
+          class="px-4 py-2 rounded-lg text-sm font-medium hover:cursor-pointer lg:text-[1rem] hover:text-[#2563eb]"
           to="/about"
           >About</RouterLink
         >
@@ -39,3 +39,11 @@ import { RouterLink } from "vue-router";
     </ul>
   </nav>
 </template>
+
+<style scoped>
+.router-link-active {
+  color: #2563eb;
+  background-color: #eff6ff;
+  border: 1px solid;
+}
+</style>

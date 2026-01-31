@@ -22,4 +22,5 @@ export type Store = {
   selectedCardPost: (post: Post) => void;
   isToggle: boolean;
   toggleNav: () => void;
+  reloadPost: () => void;
 };

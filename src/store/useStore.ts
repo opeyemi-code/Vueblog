@@ -34,6 +34,10 @@ export const store = reactive<Store>({
     }
   },
 
+  async reloadPost() {
+    await store.fetchPosts();
+  },
+
   loadMorePosts() {
     store.postsLimit += 10;
     store.fetchPosts();

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import BackButton from "@/components/BackButton.vue";
 import Hero from "@/components/Hero.vue";
+import VueIcon from "@kalimahapps/vue-icons/VueIcon";
 import {
   faArrowDown,
   faCircleCheck,
@@ -194,12 +195,44 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
       </ul>
     </div>
     <!-- Tools -->
-    <div class="my-6 px-5 py-4 rounded-lg bg-white h-70">
+    <div class="my-6 px-5 py-4 rounded-lg bg-white">
       <h2
         class="text-slate-900 my-3 font-semibold text-xl leading-7 lg:text-2xl lg:leading-8"
       >
         Technologies Used
       </h2>
+      <ul class="lg:grid grid-cols-2 gap-4">
+        <li
+          class="flex items-center gap-2 bg-[#EFF6FF] my-4 py-5 px-3 rounded-lg lg:my-0"
+        >
+          <VueIcon name="de:vuejs-original" arial-hidden="true" />
+          VueJS
+        </li>
+        <li
+          class="flex items-center gap-2 bg-[#EFF6FF] my-4 py-5 px-3 rounded-lg lg:my-0"
+        >
+          <VueIcon name="de:typescript-original" arial-hidden="true" />
+          Typescript
+        </li>
+        <li
+          class="flex items-center gap-2 bg-[#EFF6FF] my-4 py-5 px-3 rounded-lg lg:my-0"
+        >
+          <VueIcon name="de:tailwindcss-original" arial-hidden="true" />
+          TailwindCSS
+        </li>
+        <li
+          class="flex items-center gap-2 bg-[#EFF6FF] my-4 py-5 px-3 rounded-lg lg:my-0"
+        >
+          <VueIcon name="bs:router-fill" arial-hidden="true" />
+          Vue Router
+        </li>
+        <li
+          class="flex items-center gap-2 bg-[#EFF6FF] my-4 py-5 px-3 rounded-lg lg:my-0"
+        >
+          <VueIcon name="de:fastapi-plain-wordmark" arial-hidden="true" />
+          Fast Api
+        </li>
+      </ul>
     </div>
   </main>
 </template>

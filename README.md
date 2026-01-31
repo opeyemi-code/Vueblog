@@ -1,42 +1,152 @@
-# Vueblog
+# VueBlog 📝
 
-This template should help get you started developing with Vue 3 in Vite.
+VueBlog is a simple blog web application built with **Vue 3** and **Vue Router** as part of an **AltSchool Africa Frontend Engineering assignment**. The project demonstrates client-side routing, API data fetching, lazy loading, error handling, and clean UI state management.
 
-## Recommended IDE Setup
+---
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 📌 Project Overview
 
-## Recommended Browser Setup
+The application fetches blog posts from an external API and displays them on the Home page. Each post links to a detailed view where users can read the full content. The app also includes proper loading states, error boundaries, and a fallback 404 page for non-existent routes.
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+---
 
-## Type Support for `.vue` Imports in TS
+## 🚀 Features
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- Home page displaying a list of blog posts
+- Blog post summary with title and excerpt
+- Dynamic blog post details page
+- API data fetching
+- Loading state while posts are being fetched
+- Error page when API requests fail
+- 404 Not Found page for invalid routes
+- Vue Router for navigation
+- Lazy loading with `Suspense`
+- Easy navigation back to Home or previous page
 
-## Customize configuration
+---
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 🛠️ Tech Stack
 
-## Project Setup
+- **Vue 3** (Composition API)
+- **Vue Router**
+- **TypeScript**
+- **Vite**
+- **Tailwind CSS**
+- **REST API** for blog posts
+- **Fontawesome Icon**
 
-```sh
+---
+
+## 📂 Project Structure (Simplified)
+
+```
+src/
+│── components/
+│   ├── Card.vue
+│   ├── LoadingState.vue
+│   ├── ErrorBoundary.vue
+│   ├── Hero.Vue
+│   ├── BackButton.vue
+│   ├── Button.vue
+│   ├── ErrorMessage.vue
+│   ├── Footer.vue
+│   ├── Header.vue
+│   ├── HeaderNav.vue
+│   ├── Post.vue
+│   ├── PostLists.vue
+│
+│── views/
+│   ├── HomeViews.vue
+│   ├── DetailView.vue
+│   ├── AboutView.vue
+│   ├── ErrorPageView.vue
+│
+│── router/
+│   └── index.ts
+│
+│── types/
+│   └── models.ts
+│
+│── store/
+│   └── useStore.ts
+│
+│── App.vue
+│── main.ts
+```
+
+---
+
+## 🔄 Routing
+
+| Route        | Description                         |
+| ------------ | ----------------------------------- |
+| `/`          | Home page – displays all blog posts |
+| `/posts/:id` | Blog post details page              |
+| `/about`     | About page                          |
+| `*`          | 404 Not Found page                  |
+
+---
+
+## ⏳ Loading & Error Handling
+
+- A **loading state UI** is displayed while fetching posts
+- An **error page** is rendered if the API request fails
+- A **404 page** is shown for invalid routes
+- Vue `Suspense` is used for lazy-loaded pages
+
+---
+
+## 🧪 Assignment Requirements Covered
+
+✅ Vue Router navigation
+✅ Dynamic routes
+✅ API data fetching
+✅ Error handling
+✅ Lazy loading with Suspense
+✅ Error boundary
+✅ Loading state UI
+✅ 404 fallback page
+
+---
+
+## 🏁 Getting Started
+
+### Clone the Repository
+
+```
+git clone https://github.com/your-username/VueBlog.git
+cd VueBlog
+```
+
+### Install Dependencies
+
+```
 bun install
 ```
 
-### Compile and Hot-Reload for Development
+### Run the App
 
-```sh
-bun dev
+```
+bun run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+---
 
-```sh
-bun run build
-```
+## 📅 Submission Details
+
+- **Assignment:** Vue Router Blog Application
+- **Program:** AltSchool Africa – Frontend Engineering
+- **Deadline:** 28th January, 11:59 PM (WAT)
+
+---
+
+## 👤 Author
+
+**Opeyemi Obatola**
+Frontend Developer
+
+---
+
+## 📄 License
+
+This project is for educational purposes only as part of an AltSchool Africa assignment.

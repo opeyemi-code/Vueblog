@@ -14,7 +14,8 @@ import { store } from "@/store/useStore";
     />
     <ButtonWithIcon
       text="Retry"
-      class="text-white block bg-blue-600 w-full p-3 rounded-lg my-5"
+      class="text-white block bg-blue-600 w-full p-3 rounded-lg my-5 hover:cursor-pointer"
+      :handleClick="() => store.reloadPost()"
     >
       <fontAwesomeIcon :icon="faArrowRotateRight" />
     </ButtonWithIcon>
