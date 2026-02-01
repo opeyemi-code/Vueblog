@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import BackButton from "@/components/BackButton.vue";
 import Hero from "@/components/Hero.vue";
-import VueIcon from "@kalimahapps/vue-icons/VueIcon";
 import {
   faArrowDown,
   faCircleCheck,
@@ -13,6 +12,7 @@ import {
   faTriangleExclamation,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { faVuejs } from "@fortawesome/free-brands-svg-icons";
 </script>
 
 <template>
@@ -205,31 +205,56 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
         <li
           class="flex items-center gap-2 bg-[#EFF6FF] my-4 py-5 px-3 rounded-lg lg:my-0"
         >
-          <VueIcon name="de:vuejs-original" arial-hidden="true" />
+          <img
+            class="w-4 h-auto"
+            src="../assets/images/vuejs.png"
+            alt=""
+            arial-hidden="true"
+          />
           VueJS
         </li>
         <li
           class="flex items-center gap-2 bg-[#EFF6FF] my-4 py-5 px-3 rounded-lg lg:my-0"
         >
-          <VueIcon name="de:typescript-original" arial-hidden="true" />
+          <img
+            class="w-4 h-auto"
+            src="../assets/images/typescript.png"
+            alt=""
+            arial-hidden="true"
+          />
           Typescript
         </li>
         <li
           class="flex items-center gap-2 bg-[#EFF6FF] my-4 py-5 px-3 rounded-lg lg:my-0"
         >
-          <VueIcon name="de:tailwindcss-original" arial-hidden="true" />
+          <img
+            class="w-4 h-auto"
+            src="../assets/images/tailwindCSS.png"
+            alt=""
+            arial-hidden="true"
+          />
           TailwindCSS
         </li>
         <li
           class="flex items-center gap-2 bg-[#EFF6FF] my-4 py-5 px-3 rounded-lg lg:my-0"
         >
-          <VueIcon name="bs:router-fill" arial-hidden="true" />
+          <img
+            class="w-4 h-auto"
+            src="../assets/images/router.png"
+            alt=""
+            arial-hidden="true"
+          />
           Vue Router
         </li>
         <li
           class="flex items-center gap-2 bg-[#EFF6FF] my-4 py-5 px-3 rounded-lg lg:my-0"
         >
-          <VueIcon name="de:fastapi-plain-wordmark" arial-hidden="true" />
+          <img
+            class="w-4 h-auto"
+            src="../assets/images/api.png"
+            alt=""
+            arial-hidden="true"
+          />
           Fast Api
         </li>
       </ul>
